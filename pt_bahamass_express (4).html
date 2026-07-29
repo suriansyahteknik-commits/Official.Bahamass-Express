@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Bahamass Express - Logistik & Transportasi Indonesia Timur</title>
+    <meta name="description" content="PT Bahamass Express merupakan perusahaan jasa logistik nasional yang berpusat di Makassar, melayani FCL, LCL, Self Drive, Delivery, dan Movement ke seluruh Indonesia Timur.">
+    
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A', // Elegant Deep Blue
+                        red: {
+                            DEFAULT: '#991B1B', // Elegant Dark Red
+                            hover: '#7F1D1D'
+                        },
+                        navy: '#0B1120',
+                        bg: '#F8FAFC',
+                        text: '#334155',
+                        light: '#94A3B8'
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'card': '0 4px 20px rgba(0,0,0,0.06)',
+                        'card-hover': '0 20px 40px rgba(30, 58, 138, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #F8FAFC; color: #334155; overflow-x: hidden; }
+        
+        /* Typography overrides */
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        p, span, div { font-family: 'Inter', sans-serif; }
+        .nav-link { font-family: 'Montserrat', sans-serif; font-weight: 600; }
+        .btn { font-family: 'Montserrat', sans-serif; font-weight: 600; }
+
+        /* Sticky Header Transition */
+        #main-header { transition: all 0.3s ease-in-out; }
+        .header-scrolled { background: rgba(255, 255, 255, 0.98) !important; backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); padding-top: 12px !important; padding-bottom: 12px !important; }
+
+        /* Line clamping for cards */
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+        /* Image Zoom Animation */
+        .img-zoom-container { overflow: hidden; border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem; }
+        .img-zoom { transition: transform 0.7s ease; }
+        .service-card:hover .img-zoom { transform: scale(1.08); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F8FAFC; }
+        ::-webkit-scrollbar-thumb { background: #1E3A8A; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #991B1B; }
+
+        /* Hero Overlay Gradient */
+        .hero-overlay { background: linear-gradient(to right, rgba(11, 17, 32, 0.95) 0%, rgba(30, 58, 138, 0.75) 50%, rgba(30, 58, 138, 0.2) 100%); }
+        
+        .pulse-icon { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(153, 27, 27, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(153, 27, 27, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(153, 27, 27, 0); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Top Bar -->
+    <div class="bg-navy text-white text-xs py-2 hidden md:block">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center"><i class="fa-solid fa-location-dot text-red mr-2"></i> Pusat Operasional: Makassar, Indonesia</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="mailto:info@bahamassexpress.com" class="flex items-center hover:text-red transition-colors">
+                    <i class="fa-solid fa-envelope mr-2"></i> info@bahamassexpress.com
+                </a>
+                <a href="mailto:marketing@bahamassexpress.com" class="flex items-center hover:text-red transition-colors">
+                    <i class="fa-solid fa-envelope-open-text mr-2"></i> marketing@bahamassexpress.com
+                </a>
+                <a href="https://wa.me/628114444156" target="_blank" class="flex items-center text-green-400 font-bold hover:text-white transition-colors">
+                    <i class="fa-brands fa-whatsapp mr-2 text-lg"></i> 0811-4444-156
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header id="main-header" class="bg-white w-full z-50 sticky top-0 py-4 transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#beranda" class="flex items-center space-x-2">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center mr-3 shadow-md">
+                        <i class="fa-solid fa-ship text-xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-extrabold tracking-tight">
+                        <span class="text-primary">Bahamas</span><span class="text-red">Express</span>
+                    </h1>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#beranda" class="nav-link text-primary border-b-2 border-primary pb-1">Beranda</a>
+                <a href="#tentang-kami" class="nav-link text-text hover:text-primary transition-colors">Tentang Kami</a>
+                <a href="#layanan" class="nav-link text-text hover:text-primary transition-colors">Layanan</a>
+                <a href="#rute" class="nav-link text-text hover:text-primary transition-colors">Rute Area</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden lg:block">
+                <a href="https://wa.me/628114444156" target="_blank" class="btn bg-red hover:bg-red-hover text-white px-6 py-2.5 rounded-lg flex items-center space-x-2 transition-colors duration-300 shadow-lg pulse-icon">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Hubungi Kami</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-primary focus:outline-none cursor-pointer p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-primary/95 z-[60] flex flex-col justify-center items-center space-y-8 backdrop-blur-lg transition-all duration-300 opacity-0 pointer-events-none">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-white text-4xl focus:outline-none p-2">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="#beranda" class="mobile-link text-white text-2xl font-montserrat font-bold hover:text-red transition-colors">Beranda</a>
+        <a href="#tentang-kami" class="mobile-link text-white text-2xl font-montserrat font-bold hover:text-red transition-colors">Tentang Kami</a>
+        <a href="#layanan" class="mobile-link text-white text-2xl font-montserrat font-bold hover:text-red transition-colors">Layanan</a>
+        <a href="#rute" class="mobile-link text-white text-2xl font-montserrat font-bold hover:text-red transition-colors">Rute Area</a>
+        <a href="https://wa.me/628114444156" target="_blank" class="mobile-link text-white bg-red px-8 py-3 rounded-full text-xl font-montserrat font-bold flex items-center shadow-lg mt-4">
+            <i class="fa-brands fa-whatsapp mr-2"></i> Hubungi WA
+        </a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative h-[90vh] min-h-[650px] flex items-center w-full bg-navy overflow-hidden">
+        <!-- Background Image: Container Ship/Port -->
+        <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070&auto=format&fit=crop" alt="Kapal Kontainer Bahamass Express" class="absolute inset-0 w-full h-full object-cover object-center opacity-70">
+        
+        <div class="absolute inset-0 hero-overlay"></div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10 pt-10">
+            <div class="max-w-3xl text-white">
+                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 mb-6">
+                    <i class="fa-solid fa-anchor text-red"></i>
+                    <span class="tracking-wider text-sm font-semibold uppercase text-gray-100 font-montserrat">Pusat Operasional: Kota Makassar</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    Gerbang Logistik <br>
+                    <span class="text-red">Indonesia Timur</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed font-light">
+                    Solusi transportasi, distribusi, dan logistik terintegrasi. Kami melayani FCL, LCL, Delivery, Movement, RORO, dan Mobilisasi Kendaraan dengan jangkauan terluas dan layanan profesional.
+                </p>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="https://wa.me/628114444156" target="_blank" class="btn bg-red hover:bg-red-hover text-white px-8 py-4 rounded-lg flex items-center space-x-3 transition-colors duration-300 shadow-lg text-lg">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Konsultasi via WA</span>
+                    </a>
+                    <a href="#layanan" class="btn bg-primary/80 backdrop-blur-sm border border-primary hover:bg-primary text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition-all duration-300 text-lg shadow-lg">
+                        <span>Lihat Layanan</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Makassar Skyline/Port Icon Hint at bottom -->
+        <div class="absolute bottom-0 right-0 w-full md:w-1/2 opacity-30 pointer-events-none">
+            <svg viewBox="0 0 1000 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto text-white fill-current">
+                <path d="M1000 200H0V150C50 140 100 120 150 120C200 120 250 160 300 160C350 160 400 130 450 130C500 130 550 170 600 170C650 170 700 110 750 110C800 110 850 150 900 150C950 150 980 170 1000 180V200Z" />
+                <rect x="800" y="80" width="40" height="70" />
+                <rect x="850" y="100" width="30" height="50" />
+                <rect x="750" y="120" width="35" height="30" />
+                <!-- Cranes/Port simplified -->
+                <path d="M900 150 L880 50 L920 50 Z" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- RUTE & COVERAGE SECTION -->
+    <section id="rute" class="py-16 bg-white border-b border-gray-100">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/3">
+                    <h2 class="text-3xl font-extrabold text-primary mb-4 border-l-4 border-red pl-4">Rute Layanan Utama</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Berpusat di <strong>Kota Makassar</strong>, kami memiliki spesialisasi kuat dalam menjangkau seluruh wilayah Indonesia Timur dan Kalimantan dengan armada laut dan darat yang terintegrasi.</p>
+                    <a href="https://wa.me/628114444156" target="_blank" class="text-red font-bold flex items-center hover:text-primary transition-colors">
+                        Cek Tarif Pengiriman <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="lg:w-2/3 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-bg p-4 rounded-xl text-center border border-gray-100 hover:border-primary transition-colors shadow-sm">
+                        <i class="fa-solid fa-city text-3xl text-primary mb-2"></i>
+                        <h4 class="font-bold text-navy">Makassar</h4>
+                        <p class="text-xs text-gray-500">Pusat Operasional</p>
+                    </div>
+                    <div class="bg-bg p-4 rounded-xl text-center border border-gray-100 hover:border-primary transition-colors shadow-sm">
+                        <i class="fa-solid fa-map-location-dot text-3xl text-red mb-2"></i>
+                        <h4 class="font-bold text-navy">Sulawesi</h4>
+                        <p class="text-xs text-gray-500">Palu, Mamuju, Manado</p>
+                    </div>
+                    <div class="bg-bg p-4 rounded-xl text-center border border-gray-100 hover:border-primary transition-colors shadow-sm">
+                        <i class="fa-solid fa-ship text-3xl text-primary mb-2"></i>
+                        <h4 class="font-bold text-navy">Maluku</h4>
+                        <p class="text-xs text-gray-500">Ambon, Ternate</p>
+                    </div>
+                    <div class="bg-bg p-4 rounded-xl text-center border border-gray-100 hover:border-primary transition-colors shadow-sm">
+                        <i class="fa-solid fa-earth-asia text-3xl text-red mb-2"></i>
+                        <h4 class="font-bold text-navy">Papua & Kal</h4>
+                        <p class="text-xs text-gray-500">Jayapura, Sorong, Biak, Kalimantan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN KAMI SECTION -->
+    <section id="layanan" class="py-20 bg-bg">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <span class="text-red font-bold uppercase tracking-wider text-sm">Layanan Utama Kami</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-primary mt-2">
+                    Solusi Logistik & Transportasi
+                </h2>
+                <div class="w-24 h-1 bg-red mx-auto mt-6 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- FCL -->
+                <div onclick="openServiceModal('fcl')" class="cursor-pointer service-card bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col group border border-gray-100 overflow-hidden">
+                    <div class="img-zoom-container h-56 relative">
+                        <!-- Port / Container Image -->
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7c50a41?q=80&w=800&auto=format&fit=crop" alt="FCL Container" class="img-zoom w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">Laut</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col relative">
+                        <div class="absolute -top-8 left-6 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-primary text-2xl border-4 border-bg">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mt-4 mb-3">FCL (Full Container Loading)</h3>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-3">Layanan pengiriman barang menggunakan 1 kontainer penuh (20ft/40ft) eksklusif untuk muatan besar Anda via jalur laut.</p>
+                        <div class="mt-auto border-t border-gray-50 pt-4 flex justify-between items-center">
+                            <span class="text-red font-bold text-sm flex items-center group-hover:text-primary transition-colors">
+                                Detail Layanan
+                            </span>
+                            <i class="fa-solid fa-circle-arrow-right text-gray-300 text-xl group-hover:text-red transition-colors"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LCL -->
+                <div onclick="openServiceModal('lcl')" class="cursor-pointer service-card bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col group border border-gray-100 overflow-hidden">
+                    <div class="img-zoom-container h-56 relative">
+                        <!-- Loading/Unloading Warehouse Image -->
+                        <img src="https://images.unsplash.com/photo-1587293852726-59fb1531e21b?q=80&w=800&auto=format&fit=crop" alt="LCL Container" class="img-zoom w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">Laut</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col relative">
+                        <div class="absolute -top-8 left-6 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-red text-2xl border-4 border-bg">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mt-4 mb-3">LCL (Low Container Loading)</h3>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-3">Solusi pengiriman kargo laut untuk volume menengah. Barang dikonsolidasikan dalam satu kontainer, lebih hemat biaya.</p>
+                        <div class="mt-auto border-t border-gray-50 pt-4 flex justify-between items-center">
+                            <span class="text-red font-bold text-sm flex items-center group-hover:text-primary transition-colors">
+                                Detail Layanan
+                            </span>
+                            <i class="fa-solid fa-circle-arrow-right text-gray-300 text-xl group-hover:text-red transition-colors"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Self Drive -->
+                <div onclick="openServiceModal('self-drive')" class="cursor-pointer service-card bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col group border border-gray-100 overflow-hidden">
+                    <div class="img-zoom-container h-56 relative">
+                        <!-- Driver/Vehicle inside port -->
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="Self Drive" class="img-zoom w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-red text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">Darat / Laut</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col relative">
+                        <div class="absolute -top-8 left-6 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-primary text-2xl border-4 border-bg">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mt-4 mb-3">Self Drive</h3>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-3">Layanan pengantaran kendaraan langsung dikemudikan oleh supir profesional kami menuju pelabuhan atau lokasi tujuan Anda.</p>
+                        <div class="mt-auto border-t border-gray-50 pt-4 flex justify-between items-center">
+                            <span class="text-red font-bold text-sm flex items-center group-hover:text-primary transition-colors">
+                                Detail Layanan
+                            </span>
+                            <i class="fa-solid fa-circle-arrow-right text-gray-300 text-xl group-hover:text-red transition-colors"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery -->
+                <div onclick="openServiceModal('delivery')" class="cursor-pointer service-card bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col group border border-gray-100 overflow-hidden">
+                    <div class="img-zoom-container h-56 relative">
+                        <!-- Trucking / Logistics Delivery -->
+                        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800&auto=format&fit=crop" alt="Delivery" class="img-zoom w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">Darat</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col relative">
+                        <div class="absolute -top-8 left-6 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-red text-2xl border-4 border-bg">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mt-4 mb-3">Delivery</h3>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-3">Distribusi kargo, consumer goods, dan pengiriman barang via truk (CDD, CDE, Wingbox) hingga tiba di titik tujuan / gudang.</p>
+                        <div class="mt-auto border-t border-gray-50 pt-4 flex justify-between items-center">
+                            <span class="text-red font-bold text-sm flex items-center group-hover:text-primary transition-colors">
+                                Detail Layanan
+                            </span>
+                            <i class="fa-solid fa-circle-arrow-right text-gray-300 text-xl group-hover:text-red transition-colors"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Movement -->
+                <div onclick="openServiceModal('movement')" class="cursor-pointer service-card bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col group border border-gray-100 overflow-hidden">
+                    <div class="img-zoom-container h-56 relative">
+                        <!-- Heavy Machinery / Fleet relocation -->
+                        <img src="https://images.unsplash.com/photo-1580674684081-776733190ab7?q=80&w=800&auto=format&fit=crop" alt="Movement" class="img-zoom w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-red text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">Proyek & Alat Berat</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col relative">
+                        <div class="absolute -top-8 left-6 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-primary text-2xl border-4 border-bg">
+                            <i class="fa-solid fa-truck-ramp-box"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mt-4 mb-3">Movement</h3>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-3">Mobilisasi armada operasional perusahaan, alat berat, dan relokasi aset antar kota dan antar pulau secara aman.</p>
+                        <div class="mt-auto border-t border-gray-50 pt-4 flex justify-between items-center">
+                            <span class="text-red font-bold text-sm flex items-center group-hover:text-primary transition-colors">
+                                Detail Layanan
+                            </span>
+                            <i class="fa-solid fa-circle-arrow-right text-gray-300 text-xl group-hover:text-red transition-colors"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RORO -->
+                <div onclick="openServiceModal('roro')" class="cursor-pointer service-card bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col group border border-gray-100 overflow-hidden">
+                    <div class="img-zoom-container h-56 relative">
+                        <!-- RORO Ship -->
+                        <img src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=800&auto=format&fit=crop" alt="RORO Ship" class="img-zoom w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">Laut</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col relative">
+                        <div class="absolute -top-8 left-6 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-red text-2xl border-4 border-bg">
+                            <i class="fa-solid fa-ferry"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mt-4 mb-3">Kapal RORO</h3>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-3">Pengiriman efisien menggunakan Kapal Ro-Ro. Kendaraan dapat langsung masuk dan keluar kapal, mempercepat proses logistik.</p>
+                        <div class="mt-auto border-t border-gray-50 pt-4 flex justify-between items-center">
+                            <span class="text-red font-bold text-sm flex items-center group-hover:text-primary transition-colors">
+                                Detail Layanan
+                            </span>
+                            <i class="fa-solid fa-circle-arrow-right text-gray-300 text-xl group-hover:text-red transition-colors"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG & KEUNGGULAN SECTION -->
+    <section id="tentang-kami" class="py-20 bg-white">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Left Content: Image of Port activities -->
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute -inset-4 bg-primary rounded-xl transform -rotate-2 opacity-10"></div>
+                    <img src="https://images.unsplash.com/photo-1559297434-fae8a1916a79?q=80&w=1000&auto=format&fit=crop" alt="Aktivitas Pelabuhan Makassar" class="relative rounded-xl shadow-2xl w-full object-cover h-[450px]">
+                    
+                    <!-- Floating Stats Badge -->
+                    <div class="absolute -bottom-8 right-6 bg-white p-6 rounded-xl shadow-xl flex items-center space-x-4 border-t-4 border-red">
+                        <div class="text-primary text-4xl"><i class="fa-solid fa-anchor-circle-check"></i></div>
+                        <div>
+                            <div class="font-extrabold text-primary text-2xl">Integrasi</div>
+                            <div class="text-sm text-gray-500 font-medium">Layanan Logistik Nasional</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="lg:w-1/2">
+                    <span class="text-red font-bold uppercase tracking-wider text-sm">Tentang Perusahaan</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-primary mb-6 mt-2">Ahli Logistik <span class="text-red">Nusantara</span></h2>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                        PT. Bahamas Express menyediakan layanan transportasi, distribusi, mobilisasi kendaraan, trucking, container, RORO, pergudangan, dan solusi logistik lainnya dengan jaringan luas dan layanan profesional, terutama berpusat di wilayah Timur Indonesia.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-red text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Jaringan Luas Timur Indonesia</h4>
+                                <p class="text-sm text-gray-500">Koneksi kuat ke Makassar, Papua, Maluku, dan Sulawesi.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-red text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Operasional Terpadu</h4>
+                                <p class="text-sm text-gray-500">Mulai dari bongkar muat pelabuhan hingga pengiriman door-to-door.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-red text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Keamanan & Kecepatan</h4>
+                                <p class="text-sm text-gray-500">Pemantauan armada dan komitmen waktu pengiriman (SLA).</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/628114444156" target="_blank" class="inline-flex items-center space-x-2 bg-primary hover:bg-navy text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg">
+                        <span>Hubungi Marketing Kami</span>
+                        <i class="fa-solid fa-headset"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & KONTAK -->
+    <footer class="bg-navy pt-20 pb-10 text-white border-t-4 border-red">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-white text-primary rounded-lg flex items-center justify-center mr-3">
+                            <i class="fa-solid fa-ship text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-extrabold tracking-tight">
+                            <span class="text-white">Bahamas</span><span class="text-red">Express</span>
+                        </h2>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Mitra logistik dan transportasi terpercaya. Mengutamakan keselamatan kargo dan ketepatan waktu distribusi ke seluruh penjuru Nusantara.
+                    </p>
+                </div>
+
+                <!-- Kontak -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 font-montserrat text-white">Informasi Kontak</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3 text-sm text-gray-400">
+                            <i class="fa-solid fa-location-dot mt-1 text-red"></i>
+                            <span>Jl. Pongtiku No.176, La'latang, Kec. Tallo, Kota Makassar, Sulawesi Selatan 90213</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-sm text-gray-400">
+                            <i class="fa-brands fa-whatsapp text-green-400 text-lg"></i>
+                            <a href="https://wa.me/628114444156" target="_blank" class="hover:text-white transition-colors">0811-4444-156</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 font-montserrat text-white">Email Perusahaan</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3 text-sm text-gray-400">
+                            <i class="fa-solid fa-envelope text-red"></i>
+                            <div>
+                                <span class="block text-xs text-gray-500">Marketing</span>
+                                <a href="mailto:marketing@bahamassexpress.com" class="hover:text-white transition-colors">marketing@bahamassexpress.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-3 text-sm text-gray-400">
+                            <i class="fa-solid fa-envelope-open-text text-red"></i>
+                            <div>
+                                <span class="block text-xs text-gray-500">Penawaran Harga (Official)</span>
+                                <a href="mailto:info@bahamassexpress.com" class="hover:text-white transition-colors">info@bahamassexpress.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layanan -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 font-montserrat text-white">Layanan Utama</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#layanan" class="text-gray-400 hover:text-red transition-colors text-sm"><i class="fa-solid fa-chevron-right text-xs mr-2 text-primary"></i> FCL (Full Container)</a></li>
+                        <li><a href="#layanan" class="text-gray-400 hover:text-red transition-colors text-sm"><i class="fa-solid fa-chevron-right text-xs mr-2 text-primary"></i> LCL (Low Container)</a></li>
+                        <li><a href="#layanan" class="text-gray-400 hover:text-red transition-colors text-sm"><i class="fa-solid fa-chevron-right text-xs mr-2 text-primary"></i> Self Drive</a></li>
+                        <li><a href="#layanan" class="text-gray-400 hover:text-red transition-colors text-sm"><i class="fa-solid fa-chevron-right text-xs mr-2 text-primary"></i> Delivery & Movement</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-white/10 pt-8 flex justify-center text-sm text-gray-500 text-center">
+                <p>&copy; 2026 PT. Bahamas Express. All rights reserved. Makassar, Indonesia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BAGIAN MODAL (POPUP) UNTUK DETAIL LAYANAN  -->
+    <div id="service-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 transition-all duration-300">
+        <div class="absolute inset-0 bg-navy/80 backdrop-blur-sm transition-opacity" onclick="closeServiceModal()"></div>
+
+        <div id="modal-box" class="relative bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300 z-10 flex flex-col md:flex-row">
+            
+            <button onclick="closeServiceModal()" class="absolute top-4 right-4 w-10 h-10 bg-bg hover:bg-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors z-20 shadow-sm border border-gray-200">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <!-- Gambar Kiri -->
+            <div class="md:w-2/5 h-64 md:h-auto relative">
+                <img id="modal-img" src="" alt="Service" class="w-full h-full object-cover rounded-t-2xl md:rounded-tr-none md:rounded-l-2xl">
+            </div>
+
+            <!-- Konten Kanan -->
+            <div class="md:w-3/5 p-8 lg:p-10 flex flex-col justify-center bg-white rounded-b-2xl md:rounded-r-2xl md:rounded-bl-none">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div id="modal-icon-container" class="w-14 h-14 bg-blue-50 text-primary rounded-xl flex items-center justify-center text-2xl border border-blue-100 shadow-sm">
+                        <i id="modal-icon" class="fa-solid"></i>
+                    </div>
+                    <h3 id="modal-title" class="text-2xl md:text-3xl font-extrabold text-primary font-montserrat tracking-tight">Judul</h3>
+                </div>
+                
+                <div class="w-16 h-1 bg-red mb-6 rounded-full"></div>
+
+                <div id="modal-desc" class="text-gray-600 space-y-4 text-sm md:text-base leading-relaxed font-inter">
+                    <!-- Text Description Will Be Injected Here -->
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-100">
+                    <a href="https://wa.me/628114444156" target="_blank" class="btn bg-red hover:bg-red-hover text-white px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors duration-300 shadow-md w-full md:w-auto md:inline-flex">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Pesan Layanan via WA</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sticky Header
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            // Mobile Menu Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('opacity-0');
+                mobileMenu.classList.toggle('pointer-events-none');
+                mobileMenu.classList.toggle('opacity-100');
+                mobileMenu.classList.toggle('pointer-events-auto');
+                
+                if (mobileMenu.classList.contains('opacity-100')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+        });
+
+        // Data Detail Layanan Baru
+        const servicesData = {
+            'fcl': {
+                title: 'FCL (Full Container Loading)',
+                icon: 'fa-boxes-stacked',
+                iconColor: 'text-primary',
+                img: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c50a41?q=80&w=800&auto=format&fit=crop',
+                desc: `<p>Layanan kargo laut <strong>FCL (Full Container Loading)</strong> menjamin eksklusivitas dan keamanan tingkat tinggi. Barang Anda menempati satu kontainer penuh (ukuran 20 feet atau 40 feet) tanpa digabung dengan muatan klien lain.</p>
+                       <ul class="list-disc pl-5 space-y-2 mt-2">
+                           <li><strong>Proses Cepat di Pelabuhan:</strong> Proses bongkar muat khusus dan lebih terkontrol.</li>
+                           <li><strong>Rute Dominan:</strong> Berangkat dari Makassar menuju seluruh pelabuhan di Maluku, Papua, Sulawesi, dan Kalimantan.</li>
+                       </ul>`
+            },
+            'lcl': {
+                title: 'LCL (Low Container Loading)',
+                icon: 'fa-box-open',
+                iconColor: 'text-red',
+                img: 'https://images.unsplash.com/photo-1587293852726-59fb1531e21b?q=80&w=800&auto=format&fit=crop',
+                desc: `<p>Bagi Anda yang mengirimkan barang dalam volume sedang, layanan <strong>LCL (Low/Less Container Loading)</strong> adalah solusi paling ekonomis.</p>
+                       <p>Kami melakukan konsolidasi barang Anda dengan barang lain ke dalam satu kontainer. Proses ini dikelola dengan presisi di gudang transit kami di Pelabuhan untuk memastikan keamanan setiap kargo sebelum berlayar.</p>`
+            },
+            'self-drive': {
+                title: 'Self Drive',
+                icon: 'fa-car-side',
+                iconColor: 'text-primary',
+                img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
+                desc: `<p>Layanan <strong>Self Drive</strong> adalah opsi praktis untuk pengantaran kendaraan mobil atau truk yang masih bisa beroperasi normal.</p>
+                       <p>Tim pengemudi profesional kami akan menjemput kendaraan dari dealer, rumah, atau kantor Anda, dan mengendarainya langsung dengan aman menuju pelabuhan atau ke lokasi tujuan darat akhir yang Anda inginkan.</p>`
+            },
+            'delivery': {
+                title: 'Delivery',
+                icon: 'fa-truck-fast',
+                iconColor: 'text-red',
+                img: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800&auto=format&fit=crop',
+                desc: `<p>Jasa <strong>Delivery</strong> berfokus pada pendistribusian barang, paket komersial, maupun <em>consumer goods</em> via jalur darat.</p>
+                       <p>Layanan door-to-door yang di-support oleh armada truk engkel (CDE/CDD), fuso, hingga wingbox yang menjamin barang sampai ke agen, gudang, atau toko di berbagai kota rute kami secara tepat waktu.</p>`
+            },
+            'movement': {
+                title: 'Movement',
+                icon: 'fa-truck-ramp-box',
+                iconColor: 'text-primary',
+                img: 'https://images.unsplash.com/photo-1580674684081-776733190ab7?q=80&w=800&auto=format&fit=crop',
+                desc: `<p><strong>Movement</strong> dirancang khusus untuk mobilisasi alat berat (Excavator, Dozer, Crane) dan relokasi aset armada perusahaan antar proyek dan antar daerah.</p>
+                       <p>Proses pergerakan aset logistik berat ini memerlukan keahlian navigasi perizinan, pengawalan, serta teknis pemuatan (loading) yang semuanya ditangani oleh ahlinya di Bahamas Express.</p>`
+            },
+            'roro': {
+                title: 'Kapal RORO',
+                icon: 'fa-ferry',
+                iconColor: 'text-red',
+                img: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=800&auto=format&fit=crop',
+                desc: `<p>Pengiriman via <strong>Kapal Ro-Ro (Roll-on/Roll-off)</strong> memberikan efisiensi tinggi pada waktu muat dan bongkar di pelabuhan untuk berbagai jenis kendaraan bermotor hingga kargo proyek.</p>
+                       <p>Layanan ini sangat cocok untuk menjangkau rute-rute antarpulau seperti rute Makassar - Balikpapan, Makassar - Surabaya, atau ke wilayah kepulauan lainnya.</p>`
+            }
+        };
+
+        // Modal Logic
+        const serviceModal = document.getElementById('service-modal');
+        const modalBox = document.getElementById('modal-box');
+        
+        function openServiceModal(serviceKey) {
+            const data = servicesData[serviceKey];
+            if (!data) return;
+
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-img').src = data.img;
+            document.getElementById('modal-desc').innerHTML = data.desc;
+            
+            const iconEl = document.getElementById('modal-icon');
+            iconEl.className = `fa-solid ${data.icon}`;
+            
+            const iconContainer = document.getElementById('modal-icon-container');
+            iconContainer.className = `w-14 h-14 rounded-xl flex items-center justify-center text-2xl border shadow-sm ${data.iconColor === 'text-red' ? 'bg-red-50 text-red border-red-100' : 'bg-blue-50 text-primary border-blue-100'}`;
+
+            serviceModal.classList.remove('hidden');
+            serviceModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+
+            setTimeout(() => {
+                modalBox.classList.remove('opacity-0', 'scale-95');
+                modalBox.classList.add('opacity-100', 'scale-100');
+            }, 10);
+        }
+
+        function closeServiceModal() {
+            modalBox.classList.remove('opacity-100', 'scale-100');
+            modalBox.classList.add('opacity-0', 'scale-95');
+            
+            setTimeout(() => {
+                serviceModal.classList.remove('flex');
+                serviceModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
